@@ -8,7 +8,7 @@ debug:
 
 docker-image:
 	@docker buildx build -t iobruno/discord-bot-aarch64 . --platform linux/arm64
-	# @docker buildx build -t iobruno/discord-bot-amd64 . --platform linux/amd64
+	@docker buildx build -t iobruno/discord-bot-amd64 . --platform linux/amd64
 
 docker-run:
 ifeq (${arch_flag},arm64)

@@ -1,7 +1,7 @@
 import discord
-import os
-import requests
+import httpx as r
 import json
+import os
 import re
 
 client = discord.Client()
@@ -11,7 +11,7 @@ endpoint_cifar10 = "http://alb-fast-api-model-serving-v2-1905986998.us-east-1.el
 
 
 def predict(url):
-    response = requests.get(url)
+    response = r.get(url)
     pretty_json = json.loads(response.text)
     return pretty_json
 
